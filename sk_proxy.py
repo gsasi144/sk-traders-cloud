@@ -209,6 +209,7 @@ def place_order():
         log.info(f"ORDER PARAMS — {order_params}")
         resp = session["obj"].placeOrder(order_params)
         log.info(f"ORDER RESPONSE — {resp}")
+        log.info(f"FULL RESP TYPE — {type(resp)} — {repr(resp)}")
 
         if resp and str(resp) != 'None':
             _save_trade(body, resp, "LIVE")
